@@ -363,5 +363,10 @@ def save_user_to_db(session_id, user_data):
     except Exception as e:
         logging.error(f"❌ Lỗi khi lưu dữ liệu vào Firestore: {e}")
 
+
+@app.route('/')
+def hello():
+    return 'Hello from Flask on Render!'
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=10000)
