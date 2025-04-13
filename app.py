@@ -361,6 +361,8 @@ def save_user_to_db(session_id, user_data):
             logging.warning(f"⚠️ Tài liệu không tồn tại, tạo mới với session_id: {session_id}")
             doc_ref.set(user_data)  # Nếu không tồn tại, tạo mới tài liệu
     except Exception as e:
+        logging.error(f"❌ Lỗi khi lưu người dùng vào Firestore: {e}")
+
 
 
 @app.route('/')
