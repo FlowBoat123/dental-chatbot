@@ -361,13 +361,11 @@ def save_user_to_db(session_id, user_data):
             logging.warning(f"⚠️ Tài liệu không tồn tại, tạo mới với session_id: {session_id}")
             doc_ref.set(user_data)  # Nếu không tồn tại, tạo mới tài liệu
     except Exception as e:
-        logging.error(f"❌ Lỗi khi lưu dữ liệu vào Firestore: {e}")
 
 
 @app.route('/')
-def home():
-    return 'Hello from Flask + Render!'
+def hello():
+    return 'Hello from Flask on Render!'
 
-# Đừng để app.run nếu dùng gunicorn
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
