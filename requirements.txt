@@ -1,0 +1,5 @@
+firebase_admin
+transformers
+flask
+torch
+requests
