@@ -365,8 +365,9 @@ def save_user_to_db(session_id, user_data):
 
 
 @app.route('/')
-def hello():
-    return 'Hello from Flask on Render!'
+def home():
+    return 'Hello from Flask + Render!'
 
+# Đừng để app.run nếu dùng gunicorn
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(debug=True)
